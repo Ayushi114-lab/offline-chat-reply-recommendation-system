@@ -1,0 +1,18 @@
+import joblib
+import os
+
+# Define model metadata
+model_info = {
+    "model_name": "t5-small",
+    "model_dir": "./chatrec_output/t5_chatrec_model",
+    "description": "Fine-tuned T5-small model for offline chat-reply recommendation system",
+    "tokenizer": "T5TokenizerFast",
+    "framework": "PyTorch + Transformers",
+    "version": "1.0"
+}
+
+# Save as Model.joblib
+output_path = os.path.join("./chatrec_output", "Model.joblib")
+joblib.dump(model_info, output_path)
+
+print(f"Model.joblib saved successfully at {output_path}")
